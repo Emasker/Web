@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    按钮将不会导致任何行动,因为以前的历史列表中没有URL
+    <input type="button" value="前进" onclick="goForward()">
+    <input type="button" value="返回" onclick="goBack()">
+    <input type="button" value="后退1页" onclick="goBack1()">
+    <script>
+        //返回由客户机发送服务器的user-agent 头部的值
+        console.log(navigator.userAgent);
+        //加载 history 列表中的前一个 URL
+        function goBack() {
+            window.history.back()
+        }
+        //加载 history 列表中的下一个 URL
+        function goForward() {
+            window.history.forward()
+        }
+        //加载 history 列表中的某个具体页面
+        function goBack1() {
+            window.history.go(-1)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <style>
+    </style>
+</head>
+<body>
+    <button>click</button>
+    <div></div>
+    <form action="4.1index.html">
+        用户名：<input type="text" name="name">
+        <input type="submit" value="登录">
+    </form>
+    
+    <script>
+        var btn=document.querySelector('button');
+        var div=document.querySelector('div');
+        btn.addEventListener('click',function(){
+           //console.log(location.href);//file:///D:/Code/JavaScript/BOM/4.locat
+           //location.assign('')//location跳转页面，记录历史可以后退
+           //location.replace('')//替换页面不记录历史
+           location.reload();//重新刷新本页面，括号内写true为强制刷新
+        })
+        var timer=5;
+        setInterval(() => {
+            if(timer===0){
+               location.href='4.1index.html';//访问新链接
+            }else{
+                div.innerHTML='您将在'+timer+'秒后跳转首页';
+            timer--;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

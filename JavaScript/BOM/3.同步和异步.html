@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>执行机制</title>
+</head>
+
+<body>
+    <script>
+        {
+            console.log(1);
+            setTimeout(() => {
+                console.log(3);
+            }, 1000);
+            console.log(2); //1,2,3
+        } {
+            console.log(1);
+            setTimeout(() => {
+                console.log(3);
+            }, 0);
+            console.log(2); //1,2,3
+        }
+        // JS的异步是通过回调函数实现的。一般而言，异步任务有以下三种类型
+        //1、普通事件，如click、resize等
+        //2、资源加载，如load.error等
+        //3、定时器，包括setInterval、setTimeout等
+        {
+            console.log(1);
+            document.onclick=function(){
+                console.log('click');
+            }//异步任务,但不点击就不会出现
+            console.log(2);
+            setTimeout(() => {
+                console.log(3);//异步任务
+            }, 3000);//1,2,3
+        }
+    </script>
+</body>
+
+</html>

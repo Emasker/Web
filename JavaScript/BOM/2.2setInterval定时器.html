@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+    <style>
+        span {
+            display: inline-block;
+            height: 45px;
+            background: #2a2a2a;
+            font-size: 32px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="day">0</span>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <button class="begin">开始</button>
+    <button class="stop">停止</button>
+    <script>
+        //语法规范与setTimeout相同,重复定时调用函数
+        /*     setInterval(function () {
+                console.log('every 1s output');
+            }, 1000); */
+        //定时器
+        var day = document.querySelector('.day')
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2021-10-10 0:00:47'); //用户输入函数
+        var timer = setInterval(countDown, 500)
+
+        function countDown(time) { //倒计时函数
+            var nowTime = +new Date();
+            var times = (nowTime - inputTime) / 1000;
+            let d = parseInt(times / 60 / 60 / 24);
+            d = d < 10 ? '0' + d : d;
+            day.innerHTML = d;
+            let h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            let m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            let s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+        //停止定时器
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        begin.addEventListener('click', function () {
+            setInterval(countDown, 500);
+        })
+        stop.addEventListener('click', function () {
+            clearInterval(timer);
+        })
+    </script>
+</body>
+
+</html>
