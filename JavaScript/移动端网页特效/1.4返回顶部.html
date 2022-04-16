@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返回顶部</title>
+    <style lang="">
+        .goBack {
+            display: none;
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            width: 38px;
+            height: 38px;
+            background: url(./image/back.png) no-repeat;
+            background-size: 38px 38px;
+        }
+
+        .box {
+            margin-top: 5px;
+            background: aqua;
+            width: 100%;
+            height: 300px;
+        }
+
+        nav {
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 0 4px 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="goBack"></div>
+
+    <nav>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </nav>
+    <script>
+        var goBack = document.querySelector('.goBack');
+        var nav = document.querySelector('nav');
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset >= nav.offsetTop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        });
+        goBack.addEventListener('click', function () {
+            window.scroll(0, 0);
+        })
+    </script>
+</body>
+
+</html>
