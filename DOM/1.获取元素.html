@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点</title>
+</head>
+
+<body>
+    <div id="byid">getElementById()</div>
+    <div>
+        <ul>
+        <li>ul.li1</li>
+        <li>ul.li2</li>
+        <li>ul.li3</li>
+        <li>ul.li4</li>
+    </ul>
+        <ol>
+            <li>ol.li1</li>
+            <li>ol.li2</li>
+            <li>ol.li3</li>
+        </ol>
+    </div>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <script>
+        {//getElementById
+            let node = document.getElementById('byid');
+            console.log(node);
+            console.log(typeof node); //object
+            console.dir(node); //div#byid
+            document.getElementById("byid").innerHTML = "Hello World!";
+        }{
+            //document.getElementsByTagName
+            let lis=document.getElementsByTagName('li');//返回的页面所有li元素,且返回的是伪数组形式
+            console.log(lis);//[li,li,li,li]
+            console.log(typeof lis);//object
+            console.log(lis[0]);
+            let ol=document.getElementsByTagName('ol');//[ol]
+            console.log(ol[0].getElementsByTagName('li'));//[li,li,li]
+        }{
+            let box=document.getElementsByClassName('box');
+            console.log(box);//[div.box, div.box]
+            let firstBox=document.querySelector('.box');//返回一个类名元素
+            console.log(firstBox);
+            let sec=document.querySelector('#byid');
+            console.log(sec);
+            let allBox=document.querySelectorAll('.box');//返回所有指定元素
+            console.log(allBox);
+        }{
+            //获取body
+          var bodyEle=  document.body;
+          console.log(bodyEle);
+          console.dir(bodyEle);
+          //获取html
+          var htmlEle=document.documentElement;
+          console.log(htmlEle);
+          console.dir(htmlEle);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+</head>
+<body>
+    <script>
+        //onkeyup按键弹起时触发，最后触发
+        // document.onkeyup=function(){
+        //     console.log('up');
+        // }
+        document.addEventListener('keyup',function(){
+            console.log('up');
+        })
+        // onkeydown按键按下时触发，三者最先触发
+        document.addEventListener('keydown',function(){
+            console.log('down');
+        })
+        //onkeypress按下触发，第二触发
+        document.addEventListener('keypress',function(){
+            console.log('press');//不能识别功能键如ctrl和shift等
+        })
+        //keycode获得相应键位的ASCII码值
+        document.addEventListener('keyup',function(e){
+            console.log('up'+e.keyCode);//keyup获得的大小字母不分大小写
+        })
+        document.addEventListener('keypress',function(e){
+            console.log('press'+e.keyCode);//keypress获得的大xie字母分大小写
+        })
+    </script>
+</body>
+</html>

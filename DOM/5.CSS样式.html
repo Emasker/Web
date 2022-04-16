@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+</head>
+<style>
+    .div {
+        width: 200px;
+        height: 200px;
+        background-color: #ccc;
+    }
+</style>
+
+<body>
+    <div>点击</div>
+    <div id="div2">className</div>
+    <h1 id="id1">我的标题</h1>
+
+    <button type="button" onclick="document.getElementById('id1').style.color = 'red'">
+        单击我！</button><br><!-- 事件发生时执行代码 -->
+    <div class="img">
+        <i class="close_btn">X</i>
+        <img src="../images/p1.png" alt="" style="width:200px">
+    </div>
+    <script>
+        {
+            let div = document.querySelector('div');
+            div.onclick = () => {
+                div.style.backgroundColor = '#777'; //驼峰式
+                div.style.width = '400px'; //属于内联样式
+                div.style.height='200px'
+            }
+        } {
+            let btn = document.querySelector('i');
+            let img = document.querySelector('.img');
+            btn.onclick = () => {
+                img.style.display = 'none';
+            }
+        }{
+            let div=document.querySelector('#div2');
+            div.onclick=()=>{
+                div.className='div'
+            }; 
+        }
+    </script>
+</body>
+
+</html>

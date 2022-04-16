@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="" name="f1" onsubmit="return validateForm()">
+        <button id="btn">按钮</button>
+        <input type="text" value="input"><br>
+        <label for="">
+            <input type="password" id="pwd">
+            <span class="eye">☀</span>
+        </label><br>
+        <label for="">
+            <input type="text" name="fname" required><!-- ie9以下不适用 -->
+            <input type="submit" value="提交">
+        </label><br>
+        <label for="">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+        </label><br>
+        <label for="">显示隐藏文本框
+            <input id="hide" type="text" value="请输入文本">
+        </label>
+    </form>
+    <script>
+        {
+            var btn = document.querySelector('#btn');
+            var input = document.querySelector('input');
+            btn.onclick = function () {
+                input.value = 'clicked';
+                this.disabled = true;
+            }
+        } {
+            let pwd = document.querySelector('#pwd');
+            let eye = document.querySelector('.eye');
+            var flag = 0;
+            eye.onclick = function () {
+                if (flag == 0) {
+                    pwd.type = "text"
+                    eye.innerHTML = '☆';
+                    flag = 1;
+                } else {
+                    pwd.type = "password";
+                    eye.innerHTML = "☀";
+                    flag = 0;
+                }
+            }
+        } {
+            // function validateForm() {
+            //     let x = f1.fname.value;
+            //     if (x == "") {
+            //         alert("Name must be filled out");
+            //         return false;
+            //     }
+            // }
+        }{
+            let text=document.querySelector('#hide');
+            text.onfocus=()=>{//获得焦点事件
+                console.log('1');
+               if(text.value==='请输入文本'){
+                   text.value=''
+               }
+            }
+            text.onblur=()=>{//失去焦点事件
+                console.log(0);
+                if(text.value===''){
+                    text.value='请输入文本'
+                }
+            
+        }
+        }
+    </script>
+</body>
+
+</html>

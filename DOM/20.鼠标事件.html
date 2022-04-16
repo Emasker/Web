@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标事件</title>
+    <style>
+img{
+    position: absolute;
+    top:2px;
+}
+    </style>
+</head>
+<body>
+    文本11111
+    <img src="../images/11_鼠标.png" alt="" >
+    <script>
+        //禁止鼠标右键菜单
+        document.addEventListener('contextmenu',function(e){
+            e.preventDefault();
+        })
+        //禁止鼠标选中
+        document.addEventListener('selectstart',function(e){
+            e.preventDefault();
+        })
+        //点击事件
+        document.addEventListener('click',function(e){
+            //鼠标在浏览器可视区的坐标
+            console.log(e.clientX);
+            console.log(e.clientY);
+            //在页面文档的坐标
+            console.log(e.pageX);
+            console.log(e.pageY);
+        })
+        var pic=document.querySelector('img');
+        document.addEventListener('mousemove',function(e){
+          //只要鼠标移动1px就会触发这个事件
+            var x=e.pageX;
+            var y=e.pageY;
+            console.log('x:'+x,'y:'+y);
+            pic.style.left=x-15+'px';
+            pic.style.top=y-15+'px';
+        })
+    </script>
+</body>
+</html>

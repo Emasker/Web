@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成表格</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid#333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<table cellspacing="0">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>科目</th>
+            <th>成绩</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+<tbody>
+
+      
+</tbody>
+</table>
+<script>
+    //创建数据
+    var datas=[{
+        name:'张三',
+        subject:'javascript',
+        score:90
+    },{
+        name:'李四',
+        subject:'javascript',
+        score:91
+    },{
+        name:'王五',
+        subject:'javascript',
+        score:92
+    },{
+        name:'陈六',
+        subject:'javascript',
+        score:92
+    }];
+    //往tbody里创建行
+    var tbody=document.querySelector('tbody');
+    for(var i=0;i<datas.length;i++){//外层for管行
+        //创建tr
+        var new_tr=document.createElement('tr');
+        tbody.appendChild(new_tr);
+        //再tr中创建td
+        for(var k in datas[i]){//for管列
+            var new_td=document.createElement('td');
+            new_td.innerHTML=datas[i][k];
+            new_tr.appendChild(new_td);
+        }
+        //创建删除单元格
+        var new_td=document.createElement('td');
+        new_td.innerHTML='<a href="javascript:;">删除</a> ';
+        new_tr.appendChild(new_td);
+    }
+    //删除函数
+    var as=document.querySelectorAll('a');
+    for(var i=0;i<as.length;i++){
+        as[i].onclick=function(){
+            tbody.removeChild(this.parentNode.parentNode)
+        }
+    }
+</script>
+</body>
+
+</html>

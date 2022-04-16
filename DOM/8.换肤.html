@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>换肤</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(../images/p1.png)no-repeat center top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            overflow: hidden;
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+            padding-top: 3px;
+        }
+
+        .box li {
+            float: left;
+            margin: 0 1px;
+            cursor: pointer;
+        }
+
+        .box img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box">
+        <li><img src="../images/p1.png" alt=""></li>
+        <li><img src="../images/p2.png" alt=""></li>
+        <li><img src="../images/p3.png" alt=""></li>
+        <li><img src="../images/p4.png" alt=""></li>
+    </ul>
+    <script>
+        var imgs = document.querySelector('.box').querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick =function() {
+                document.body.style.backgroundImage = 'url(' + this.src + ')';
+            }
+        }
+    </script>
+</body>
+
+</html>

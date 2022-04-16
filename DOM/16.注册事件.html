@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册事件</title>
+</head>
+
+<body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        //传统注册事件,同一个事件只能有一个监听且只执行最后的事件
+        btns[0].onclick = function () {
+            alert('hi');
+        }
+        btns[0].onclick = function () {
+            alert('how are u');
+        }
+        //方法监听注册事件，事件类型是字符串，加引号，不带on，且同一个元素可以添加多个监听
+        btns[1].addEventListener('click', function () {
+            alert('hello');
+        })
+        btns[1].addEventListener('click', function () {
+            alert('world');
+        })
+    </script>
+</body>
+
+</html>

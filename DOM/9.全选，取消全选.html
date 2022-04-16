@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全选，取消全选</title>
+</head>
+<body>
+    <table>
+        <thead><tr><th><input type="checkbox" id="checkAll">全选</th></tr></thead>
+        <tbody id="tb">
+            <tr>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var check_all=document.getElementById('checkAll');
+        var tb=document.getElementById('tb').getElementsByTagName('input');
+        console.log(tb);
+        check_all.onclick=function(){
+            for(var i=0;i<4;i++){
+                tb[i].checked=this.checked;
+            }
+        }
+        for(var i=0;i<tb.length;i++){
+            tb[i].onclick=function(){
+                var flag=true;
+                for(var i=0;i<tb.length;i++){
+                    if(!tb[i].checked){
+                        flag=false;
+                    }
+                }
+                check_all.checked=flag;
+            }
+        }
+    </script>
+</body>
+</html>

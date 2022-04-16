@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止事件</title>
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.bilibili.com/">B站</a>
+    <form action="https://www.bilibili.com/">
+        <input type="submit" value="提交" name="sub">
+    </form>
+    <div class="father">father
+        <div class="son">son</div>
+    </div>
+    <script>
+        var a = document.querySelector('a');
+        a.addEventListener('click', function (e) {
+            e.preventDefault() //dom标准写法
+        })
+        // 3．传统的注册方式
+        a.onclick = function (e) {
+            //普通浏览器e.preventDefault();方法
+            e.preventDefault();
+            //低版本浏览器ie678 returnValue属性
+            e.returnValue;
+            //我们可以利用return_false也能阻止默认行为,只限于传统
+        }
+        //常见事件对象的属性和方法
+        //阻止冒泡dom推荐的标准stopPropagation()
+        var son = document.querySelector('.son');
+        son.addEventListener('click', function (e) {
+            alert('son');
+            e.stopPropagation();
+            e.cancelBubble=true;//非标准写法
+        }, false);
+        var father = document.querySelector('.father');
+        father.addEventListener('click', function () {
+            alert('father');
+        }, false);
+        document.addEventListener('click', function () {
+            alert('document');
+        })
+    </script>
+</body>
+
+</html>
