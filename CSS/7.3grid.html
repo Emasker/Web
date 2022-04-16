@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>grid布局</title>
+<style>
+	.grid{
+		display: grid;
+		width: 500px;
+		height: 500px;
+		
+		grid-template-rows:repeat(5,100px);/*5个100px的格子*/
+		grid-template-columns:repeat(5,1fr);/*5个各站五分之一的格子*/
+		background-color: #eee;
+			grid-template-areas: 
+	". header header header header"
+	". sidebar content content content"
+	". sidebar content content content"
+	". sidebar content content content"
+	". footer footer footer footer";
+	}
+	.cell-1{
+		grid-row:1/4;
+		grid-column:1/2;
+		background-color:#5063F7;
+	}
+	.cell-2{
+		grid-row:1/5;/*负1表示直到最后一行*/
+		grid-column:4/5;
+		background-color: #FFFFFF;
+
+	}
+	.cell-3{
+		grid-row:1/3;
+		grid-column: span 2;/*往后延长到两个格子*/
+		background-color: red;
+	}
+	.cell-4{
+		grid-area:footer;
+		background-color: yellow;
+	}
+	</style>
+</head>
+
+<body>
+<div class="grid">
+	<div class="cell-1">cell-1</div>
+	<div class="cell-2">cell-2</div>
+	<div class="cell-3">cell-3</div>
+	<div class="cell-4">cell-4 grid-area</div>
+</div>
+</body>
+</html>

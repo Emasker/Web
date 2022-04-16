@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>shape形状</title>
+<style>
+    
+    body { 
+      	background:#ABB1BA; 
+      	color: #ffffff;
+      	font-family: 'Quattrocento', serif;
+    }
+    h1 {
+      	color: #ffffff;
+    	font-family: 'Holtwood One SC', serif;
+        font-size: 50px;
+        font-weight: normal;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .container {
+		padding: 5em;
+		background-color:#2F292B;
+		clip-path:polygon(0 3vw,100% 0,100% calc(100% - 3vw),0% 100%);
+        max-width: 600px;
+		min-height: 400px;
+    	margin: auto;
+    }
+	
+	@supports((clip-path:polygon(0 0))or
+		(-webkit-clip-path:polugon(0 0))){
+			.container{
+				margin-bottom: -3.4vw;
+			}
+	}
+	
+    .fig1 {
+        float: left;
+/*        shape-outside: circle();*/
+		shape-outside: inset(5px 0px round 100px);
+/*		距离盒子上下5px 左右0px 半径为100px的圆角*/
+        max-width: 40%;
+    }
+	
+	.fig2{
+		float: right;
+		max-width: 40%;
+		border-radius: 50%;
+		shape-outside: border-box;
+		margin: 2em;
+	}
+	</style>
+</head>
+
+<body>
+ 
+<div class="container">
+	<h1>形状函数</h1><img src="../images/moon.png" alt="moon" class="fig1"> 
+	<p>The moon is the fifth largest satellite in the solar system, with an average radius of about 1737.10 kilometers, equivalent to 0.273 times the radius of the earth; The mass is close to 7.342 × 1022 kg, equivalent to 0.0123 times of the earth . The surface of the moon is covered with craters formed by the impact of small celestial bodies. The average distance between the moon and the earth is about 384400 kilometers, about 30 times the diameter of the earth.</p>	
+</div>
+<div class="container">
+	<h1>形状盒子与边距</h1><img src="../images/moon.png" alt="moon" class="fig2"> 
+	<p>The moon is the fifth largest satellite in the solar system, with an average radius of about 1737.10 kilometers, equivalent to 0.273 times the radius of the earth; The mass is close to 7.342 × 1022 kg, equivalent to 0.0123 times of the earth . The surface of the moon is covered with craters formed by the impact of small celestial bodies. The average distance between the moon and the earth is about 384400 kilometers, about 30 times the diameter of the earth.</p>	
+</div>
+</body>
+</html>

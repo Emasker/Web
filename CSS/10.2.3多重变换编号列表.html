@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>多重变换</title>
+<style>
+	.rules{
+		list-style: none;
+		counter-reset: rulecount 2;
+	}
+	.rules li{
+		counter-increment: rulecount;
+		position: relative;
+	}
+	.rules li:before{
+		content:'∮' counter(rulecount);
+		position: absolute;
+		transform-origin: 100% 100%;
+		transform: translate(-100%,-100%) rotate(-90deg);
+	}
+	</style>
+</head>
+
+<body>
+<ol class="rules" start="3">
+	<li>this's the 3rd rules</li>
+	<li>this's the 4th rules</li>
+	<li>this's the 5th rules</li>
+	<li>this's the 6th rules</li>
+	<li>this's the 7th rules</li>
+</ol>
+</body>
+</html>

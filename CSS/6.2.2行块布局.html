@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>水平布局</title>
+<style>
+	.nav ul{
+		list-style: none;/*去除列表样式*/
+		background-color: #55C8F1;
+		padding: 0;
+		font-size: 0;
+	}
+	.nav li{
+		text-transform: uppercase;/*大写*/
+		display: inline-block;/*行块化*/
+		text-align: center;/*居中*/
+		/*box-sizing: border-box;/*盒模式*/
+		outline: 1px solid #fff;
+		width: 25%;
+		background-color: #3848F5;
+		font-size: 16px;
+		font-size: 1rem;
+	}
+	.nav li a{
+		display: block;/*块级元素*/
+		text-decoration: none;/*去除下划线*/
+		line-height: 1.75em;
+		padding: 1em;
+		color:#fff;
+	}
+	</style>
+</head>
+
+<body>
+<div class="nav">
+	<ul>
+		<li><a href="">Home</a></li>
+		<li><a href="">Spaceships</a></li>
+		<li><a href="">Planets</a></li>
+		<li><a href="">Start</a></li>
+	</ul>
+</div>
+</body>
+</html>

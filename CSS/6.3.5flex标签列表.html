@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>flex标签列表</title>
+<style>
+	.tags{
+	border:1px solid #c9e1f4;
+	margin: 0;
+	padding: 1em;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;/*自动换行*/
+	}
+	.tags li{
+		display: inline-block;
+		margin: .5em;
+		flex:1 0 auto;
+		max-width: 14em;/*设置最大行长*/
+	}
+	.tags a{
+		position: relative;
+		display: block;
+		padding: .25em .5em .25em.25em;
+		background-color: #C9E1F4;
+		color:#28338F;
+		border-radius: 0 .5em .25em 0;
+		line-height: 1.5;
+		text-decoration: none;
+		text-align: center;
+	}
+	.tags a:before{
+		position: absolute;	
+		content:'';
+		width: 0;
+		height: 0;
+		border: 1em solid transparent;
+		border-right-width: .5em;
+		border-right-color:#C9E1F4;
+		left:-1.5em;
+		top: 0;
+	}
+	body {
+}
+</style>
+</head>
+
+<body>
+<ul class="tags">
+	<li><a href="">Sidney</a></li>
+	<li><a href="">Warlike Merlin</a></li>
+	<li><a href="">Morgan</a></li>
+	<li><a href="">Zachary</a></li>
+	<li><a href="">Galvin</a></li>
+	<li><a href="">Jess Soldier</a></li>
+	<li><a href="">Industrious</a></li>
+	<li><a href="">Joy</a></li>
+	<li><a href="">Liza</a></li>
+	<li><a href="">Handsome</a></li>
+	<li><a href="">Dixon Roderick</a></li>
+	<li><a href="">Leroy</a></li>
+	<li><a href="">Quintana</a></li>
+	<li><a href="">Timothea</a></li>
+	<li><a href="">Eighth Just</a></li>
+	<li><a href="">Gemstone</a></li>
+	<li><a href="">Donald Desmond</a></li>
+	<li><a href="">Kenway</a></li>
+	<li><a href="">Grayson</a></li>
+	<li><a href="">Geraldine Peggy</a></li>
+	<li><a href="">Nerita</a></li>
+	<li><a href="">Violet Noblewoman</a></li>
+</ul>
+</body>
+</html>

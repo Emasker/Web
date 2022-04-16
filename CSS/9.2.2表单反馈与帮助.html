@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单反馈与帮助</title>
+<style>
+	label{
+		cursor: pointer;
+		display: block;
+	}
+	.help{
+		display: block;
+		position: absolute;
+		overflow: hidden;
+		width: 1px;
+		height: 1px;
+		clip: rect(0 0 0 0);
+	}
+	input:focus + .help{
+		padding: .5em;
+		margin-top: .5em;
+		border:1px solid #2a80fa;
+		border-radius: .25em;
+		font-style: italic;
+		color: #737373;
+		background-color: #fff;
+		position: static;
+		width: auto;
+		height: auto;
+		crop: none;
+	}
+	input:invalid{
+		border:1px solid #e72633;
+		box-shadow: 0 0 .7em rgba(229,43,37,.7);
+	}
+	</style>
+</head>
+
+<body>
+<form>
+	<p>
+	<label for="url">Web address:</label>
+	<input placeholder="http://example.com" name="url" id="url" type="url"/>
+	<span class="help">
+		Fill in your url if you have one.
+	</span>
+	</p>
+</form>
+</body>
+</html>

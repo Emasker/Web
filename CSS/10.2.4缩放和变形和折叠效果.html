@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>多重变换</title>
+<style>
+	.rules{
+		list-style: none;
+		counter-reset: rulecount 2;
+	}
+	.rules li{
+		counter-increment: rulecount;
+		position: relative;
+		line-height: 50px;
+		max-width: 300px;
+		font-weight: bold;
+	}
+	.rules li:nth-child(even){
+		background-color:aquamarine;
+	}
+	.rules li:nth-child(odd){
+		background-color: #4761F7;
+	}
+	.rules li:before{
+		width: 50px;
+		background-color: aqua;
+		content:'∮' counter(rulecount);
+		position: absolute;
+		transform-origin: 100% 100%;
+		transform: translate(-100%,-100%) rotate(-90deg);
+	}
+	.double{
+		transform: scale(2);
+		transform: scale(2,2);
+		transform: scaleX(2) scaleY(2);/*三个表达样式相同,x轴和y轴扩大两倍*/
+	}
+	.squashed{
+		transform: scale(.5);
+		transform: scale(.5,1);
+		transform: scaleX(.5) scaleY(1)/*同上，x轴缩小一半，y轴不变*/
+	}
+	/*折叠效果（这里会覆盖上面的缩放效果）*/
+	.rules li{
+		transform: skewX(15deg);
+	}
+	.rules li:nth-child(even){
+		transform: skewX(-15deg);
+	}
+	</style>
+</head>
+
+<body>
+<ol class="rules" start="3">
+	<li class="double">this's the 3rd rules</li>
+	<li class="squashed">this's the 4th rules</li>
+	<li>this's the 5th rules</li>
+	<li>this's the 6th rules</li>
+	<li>this's the 7th rules</li>
+	<li>this's the 8th rules</li>
+	<li>this's the 9th rules</li>
+</ol>
+</body>
+</html>
