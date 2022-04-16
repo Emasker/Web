@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios</title>
+    <script src="../lib/axios.js"></script>
+</head>
+
+<body>
+    <button class="btn1">发起GET请求</button>
+    <button class="btn2">发起POST请求</button>
+    <button class="btn3">直接使用axios发起GET请求</button>
+    <button class="btn4">直接使用axios发起POST请求</button>
+    <script>
+        //发起GET请求
+        document.querySelector(".btn1").addEventListener("click", function () {
+            const url = 'http://www.liulongbin.top:3006/api/get'
+            const obj = {
+                name: 'lzc',
+                age: 20
+            }
+            axios.get(url, {
+                params: obj
+            }).then(function (res) {
+                console.log(res.data);
+            })
+        })
+
+        //发起post请求
+        document.querySelector(".btn2").addEventListener("click", function () {
+            const url = 'http://www.liulongbin.top:3006/api/post'
+            const obj = {
+                address: "江西",
+                location: "南昌市"
+            }
+            axios.post(url, obj).then(function (res) {
+                console.log(res.data);
+            })
+        })
+
+        //直接使用axios发起GET请求
+        document.querySelector(".btn3").addEventListener("click", function () {
+            const url = 'http://www.liulongbin.top:3006/api/get'
+            const data = {
+                name: '钢铁侠',
+                age: 35
+            }
+            axios({
+                method: "get",
+                url: url,
+                params: data,
+            }).then(function (res) {
+                console.log(res);
+            })
+        })
+
+        //直接使用axios发起POST请求
+        document.querySelector(".btn4").addEventListener("click", function () {
+            const url = 'http://www.liulongbin.top:3006/api/post'
+            data = {
+                name: '娃哈哈',
+                age: 18,
+                gender: '女'
+            }
+            axios({
+                method: "post",
+                url: url,
+                data: data,
+            }).then(function (res) {
+                console.log(res);
+            })
+        })
+    </script>
+</body>
+
+</html>

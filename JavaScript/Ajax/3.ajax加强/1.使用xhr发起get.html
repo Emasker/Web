@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xhr</title>
+</head>
+
+<body>
+    <script>
+        //1.创建xhr对象
+        var xhr = new XMLHttpRequest();
+
+        // 设置 超时时间
+        xhr.timeout = 150
+        // 设置超时以后的处理函数
+        xhr.ontimeout = function () {
+            console.log('请求超时了！')
+        }
+
+        //2.调用open函数
+        // xhr.open("get",'http://www.liulongbin.top:3006/api/getbooks')//不带参数的形式
+        xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks?id=1') //?后面为参数 带参的请求
+        // 3. 调用 send 函数
+        xhr.send()
+        // 4. 监听 onreadystatechange 事件
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+        }
+    </script>
+</body>
+
+</html>
