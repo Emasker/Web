@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ff8080;
+            margin: 100px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin-left: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+<div class="son"></div>
+    </div>
+    <script>
+        var father=document.querySelector('.father');
+        var son=document.querySelector('.son');
+        //得到元素的偏移，位置，返回不带单位的数字
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        //它以带有定位的父亲为准﹑如果么有父亲或者父亲没有定位则以 body为准
+        console.log(son.offsetTop);
+        console.log(son.offsetLeft);
+        //获得元素的大小（宽高），包括边框和pd
+        console.log(father.offsetWidth);
+        console.log(father.offsetHeight);
+        //返回带有定位元素的父亲否则返回body
+        console.log(son.offsetParent);
+        console.log(son.parentNode);//不管有没有定位都会返回上一级
+        father.addEventListener('mousemove',function(e){
+            var x=e.pageX-this.offsetLeft;
+            var y=e.pageY-this.offsetTop;
+           father.innerHTML="x:"+x+"y:"+y;
+        })
+    </script>
+</body>
+</html>

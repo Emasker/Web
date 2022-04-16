@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            border:10px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div=document.querySelector('div');
+        console.log(div.clientTop);//返回上边框数值不带单位
+        console.log(div.clientLeft);//左边框
+        console.log(div.clientWidth);//返回自身包括padding 、内容区的宽度，不含边框，返回数值不带单位
+        console.log(div.clientHeight);//高度
+    </script>
+</body>
+</html>
