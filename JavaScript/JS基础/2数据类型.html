@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+</head>
+
+<body>
+ 
+</body>
+<script>
+    //数字型
+    var number=10 
+        number1 = 010,
+        number2 = 0xa;
+    console.log(number1); //数字前面加0表示八进制=> var a=010 输出8
+    console.log(number2); //加0x并表示16进制
+    console.log(Number.MAX_VALUE); //最大值
+    console.log(Number.MIN_VALUE); //最小值
+    console.log(Number.MAX_VALUE * 2); //Infinity 无穷大
+    console.log(-(Number.MAX_VALUE * 2)); //-Infinity 无穷小
+    console.log('字符' - 10); //NaN 非数字
+    console.log(isNaN(3)); //数字返回false
+    console.log(isNaN('code')); //其余返回true
+
+    //字符串型
+    var str = 'hello';
+    console.log(str.length); //5
+    var str2 = 'world';
+    console.log(str + str2); //字符串可加号拼接且子要字符串与其他类型拼接结果都会是字符串
+    console.log('hello' + str2); //加声明字符hello word
+    console.log('hello' + 77); //加数字hello77
+    console.log('hello' + true); //加布尔值hello true
+/*    var value = prompt('input age:');
+    var str = 'age' + value + '。';
+    alert(str);
+    console.log(typeof value);//string  *prompt输入获值为string型
+ */
+    //布尔型 
+    var flag = true;
+    var flag1 = false; //参与加法true当1 false当0
+    console.log(flag + 1); //2
+    console.log(flag1 + 1); //1
+    var value = undefined; //undefined未定义数据类型
+    console.log(value + 'code'); //undefined code 
+    console.log(value + 1); //NaNa
+    var space = null; //null空值
+    console.log(space + 1); //1
+
+    //获取数据类型  
+    console.log(typeof number);//number
+    console.log(typeof str);//string
+    console.log(typeof flag);//boolean
+    console.log(typeof value);//undefined
+    console.log(typeof space);//object
+
+    //字符型转换
+    //转换为字符型
+    var str3 = toString(number);//1转换为字符
+    console.log(typeof str3);//string
+    var str3 = String(number);//2强制转化
+    console.log(typeof str3);//string
+    var str3 = number+'10';//3.隐式转换 加字符串类型
+    console.log(typeof str3);//string
+
+    //转换为数字型
+    //1.parseInt()转换 得到的是整数3.14=>3取整数位
+    var number3 = parseInt(str3);
+    console.log(number3);//1010
+    console.log(typeof number3);//number
+    console.log(parseInt('120px'));//120 首位是数字会去掉px
+    console.log(parseInt('is120px'));//NaN 
+    //2.parseFloat()得到的是浮点数,其余用法与parseInt一致
+    console.log(parseFloat('3.14'));//3.14
+    //3.NUmber()强制转换
+    console.log(Number(number3));//1010
+    //4.隐式转换 利用算数运算符
+    console.log('12'-1);//11
+    console.log('123'*1);//123
+
+    //转换为bool值 Boolean(),带表 空，否定的值都会被转化为false例如'',0,NaN,null,undefined,其余都返回true
+    console.log(Boolean(''));//false
+    console.log(Boolean(undefined));//false
+    console.log(Boolean('code'));//true
+
+</script>
+
+</html>

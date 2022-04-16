@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    {
+        document.write('创建对象 : ' + "</br>");
+
+        let person = {
+            firstName: "Bill",
+            lastName: "Gates",
+            age: 62,
+            eyeColor: "blue"
+        };
+        document.write('1.使用对象字面量创建对象 : ' + "</br>" + person.firstName + " 已经 " + person.age + " 岁了。" + "</br>");
+
+    } {
+        let person = new Object();
+        person.firstName = "Bill";
+        person.lastName = "Gates";
+        person.age = 50;
+        person.eyeColor = "blue";
+        document.write('2.关键词 new创建对象 : ' + "</br>" + person.firstName + " is " + person.age + " years old." + "</br>");
+
+    } {
+        document.write("</br>" + '访问对象 : ' + "</br>");
+
+        let person = {
+            firstname: "Bill",
+            lastname: "Gates",
+            age: 62,
+        }
+        // x = person; // x 和 person 是相同的对象
+        // x.age = 10; //同时改变 both x.age 和 person.age
+
+        document.write('1.通过objectName.property访问对象 : ' + "</br>" + person.firstname + " is " + person.age +
+            " years old." + "</br>"); //访问对象属性的语法是：objectName.property
+        document.write('2.通过objectName["property"]访问对象 : ' + "</br>" + person["firstname"] + " is " + person["age"] +
+            " years old." + "</br>") //或者：objectName["property"]
+
+
+    } {
+        document.write("</br>" + 'for...in遍历对象 : ' + "</br>");
+
+        //for...in 循环中的代码块会为每个属性执行一次
+        var txt = "";
+        var person = {
+            fname: "Bill",
+            lname: "Gates",
+            age: 62
+        };
+        for (let x in person) {
+            txt += person[x] + " ";
+        }
+
+        document.write("1.for_in循环遍历对象显示字符串 : " + "</br>" + txt + "</br>");
+        person.nationality = "English"; //可以向现有对象添加新属性
+        delete person.age; //delete 关键词从对象中删除属性
+
+        document.write('2.对象进行删除和添加 : ' + "</br>" + person["fname"] + " is " + person["age"] + " years old " +
+            " 和新加入的 " + person["nationality"] + "</br>")
+
+
+    } {
+
+        document.write("</br>" + '创建对象方法 : ' + "</br>");
+
+        var person = {
+            firstName: "Bill",
+            lastName: "Gates",
+            id: 678,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.write("1.调用对象方法:" + "</br>" + person.fullName() + "</br>");
+
+        person.name = function () { //为对象添加新方法
+            return this.firstName + " " + this.lastName;
+        };
+
+        document.write("2.为对象添加新方法:" + "</br>" + person.name() + "</br>");
+
+    } {
+        document.write("</br>" + '显示对象 : ' + "</br>");
+
+        const person = {
+            name: "Bill",
+            age: 19,
+            city: "Seattle",
+            today: new Date()
+        };
+        const myArray = Object.values(person);
+        let myString = JSON.stringify(person);
+        //结果将是一个遵循 JSON 标记法的字符串,
+        // 且不会对函数进行字符串化,
+        // 也可以对 JavaScript 数组进行字符串化
+        document.write("1.Object.values()转换为数组显示:" + "</br>" + myArray + "</br>");
+        document.write("2.JSON.stringify()转换为字符串显示:" + "</br>" + myArray + "</br>");
+    } {
+        document.write("</br>" + '对象访问器get，set : ' + "</br>");
+
+        var person = {
+            firstName: "Bill",
+            lastName: "Gates2",
+            language: "",
+            get fullName() {
+                return this.firstName + " " + this.lastName;
+            },
+            set lang(lang) {
+                this.language = lang.toUpperCase();
+            }
+        };
+        // 使用 setter 来设置对象属性：
+        person.lang = "en";
+
+        document.write("1.使用 get 显示对象的数据:" + "</br>" + person.fullName + "</br>"); //以属性形式访问 fullName
+        document.write("2.使用 set 更改对象的数据:" + "</br>" + person.language + "</br>");
+    } {
+
+        document.write("</br>" + '对象构造(构造器函数命名大写首字母) : ' + "</br>");
+
+        function Person(first, last, age, eye) { //属性和方法前必须添加this
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            //构造器函数也可以定义方法,无法为对象构造器添加新方法,必须在构造器函数内部向一个对象添加方法
+            this.changeName = function (name) {
+                this.lastName = name;
+            };
+
+        }
+        // 创建 Person 对象
+        var myFriend = new Person("Bill", "Gates", 62, "blue");
+        var myBrother = new Person("Steve", "Jobs", 56, "green");
+        document.write("1.显示构造对象的数据:" + "</br>" + "My friend is " + myFriend.age + ". My brother is " + myBrother.age);
+        myBrother.changeName("changed");
+        console.log(myBrother.lastName);
+        Person.prototype.nationality = "English"; //prototype 属性允许您为对象构造器添加新属性
+        Person.prototype.name = function () { //也允许您为对象构造器添加新方法
+            return this.firstName + " " + this.lastName;
+        };
+        console.log(myBrother.nationality);
+        console.log(myBrother.name());
+    }
+</script>
+
+</html>

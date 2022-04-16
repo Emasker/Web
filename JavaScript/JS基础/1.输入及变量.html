@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入类型及变量</title>
+    <script>
+        //可直接var赋值变量给prompt
+        var value = prompt('prompt输入框，用户可输入');
+        alert('alert弹出警示框' + value);
+        var str = '输入' + value + '结束';
+
+        console.log(str);
+        var value1; //只声明不赋值undifined
+        console.log(value1);
+        value2 = 10; //只赋值不声明，全局变量输出
+        console.log(value2);
+        console.log(name); //name不作变量名，因为部分浏览器有自定义的name空值 
+        console.log(value3); //不声明不赋值，报错
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

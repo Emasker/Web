@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let & const</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <div id="demo1"></div>
+    <div id="demo2"></div>
+    <div id="demo3"></div>
+</body>
+<script>
+    var x = 9; {
+        var x = 10; //块内重新赋值会改变先前块外的值
+    } //此块外可用x
+    console.log(x); //10
+    let y = 9; {
+        let y = 10; //块内重新赋值不改变先前块外的值
+    } //此块外不可用块内的y
+    console.log(y); //无声明与赋值，报错
+
+    /* 在相同的作用域，或在相同的块中，通过 let 重新声明一个 var 或者 let 变量是不允许的  通过 var 重新声明一个 let 变量也是不允许的*/
+    var carName = "Audi";
+    document.getElementById("demo").innerHTML = "我可以显示 " + window.carName; // 此处的代码能够使用 window.carName
+    let carName1 = "Audi";
+    document.getElementById("demo1").innerHTML = "我不能显示 " + window.carName1; // 通过 let 关键词定义的全局变量不属于 window 对象
+{
+     for(var i=0;i<5;i++){
+        setTimeout(()=>console.log(i),0)
+    }//5,5,5,5,5
+    console.log(i);//5
+}
+{
+    for(let i=0;i<5;i++){
+        setTimeout(() => {
+            console.log(i);
+        }, 0);
+    }//0,1,2,3,4
+    console.log(i);//没有定义
+}
+   
+    //通过 const 定义的变量与 let 变量类似，但不能重新赋值，最重要的区别是它声明变量时必须同时初始化变量
+    const PI = 3.141592653589793;
+/*     PI = 3.14; // 会出错
+    PI = PI + 10; // 也会出错 */
+    //在块作用域内使用 const 声明的变量与 let 变量相似
+    var z = 10; // 此处，z 为 10
+    {
+        const z = 6; // 此处，z 为 6  
+    }
+    console.log(z); // 此处，z 为 10
+
+    const car = {
+        type: "Porsche",
+        model: "911",
+        color: "white"
+    }; //声明常量对象不会使对象属性不可更改
+    car.color = "red"; // 更改属性：
+    car.owner = "Steve"; // 添加属性：
+    document.getElementById("demo2").innerHTML = "车主是：" + car.owner; // 显示属性：
+
+/*     const car = {
+        type: "porsche",
+        model: "911",
+        color: "Black"
+    }; //但是无法重新为常量对象赋值
+    car = {
+        type: "Volvo",
+        model: "XC60",
+        color: "White"
+    }; // ERROR */
+
+    //可以更改常量数组的元素
+    const cars = ["Audi", "BMW", "porsche"];
+    cars[0] = "Honda"; //更改元素
+    cars.push("Volvo"); // 添加元素
+    document.getElementById("demo3").innerHTML = cars; 
+ /*    无法重新为常量数组赋值
+    const cars = ["Audi", "BMW", "porsche"];
+    cars = ["Honda", "Toyota", "Volvo"];    // ERROR */
+</script>
+
+</html>

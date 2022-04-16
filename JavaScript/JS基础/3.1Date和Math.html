@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date&Math</title>
+</head>
+<body>
+    <div id="a"></div>
+    <p>每当您点击按钮，getRndInteger(min, max) 就会返回 1 与 10（均包含）之间的随机数：</p>
+    <p id="demo"></p>
+    <button onclick="document.getElementById('demo').innerHTML = getRndInteger(1,10)">点击我</button>
+    <div id="t"></div>
+</body>
+<script>
+        //date型
+    var d=new Date();//使用 new Date()，使用当前日期和时间创建一个新的日期对象
+    var d = new Date(2018, 11, 24, 10, 33, 30, 0);//7个数字分别指定年、月、日、小时、分钟、秒和毫秒
+    var d = new Date();
+    var arr=['日','一','二','三','四','五','六'];
+    document.getElementById("a").innerText=(d.getFullYear()+'年  '+(d.getMonth()+1)+'月'+d.getDate()+'日   星期'+arr[d.getDay()]+'  '+d.getHours()+' : '+d.getMinutes());
+/*     getDate()	以数值返回天（1-31）
+getDay()	以数值获取周名（0-6）
+getFullYear()	获取四位的年（yyyy）
+getHours()	获取小时（0-23）
+getMilliseconds()	获取毫秒（0-999）
+getMinutes()	获取分（0-59）
+getMonth()	获取月（0-11）
+getSeconds()	获取秒（0-59）
+getTime()	&
+Date.valueOf()获取时间（从 1970 年 1 月 1 日至今） 的毫秒数*/
+
+
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+setInterval(function(){function countDown(time) {//倒计时函数
+    var nowTime=+new Date();
+    var inputTime=+new Date(time);
+    var times=(nowTime-inputTime)/1000;   
+    let d=parseInt(times/60/60/24);
+    d=d<10?'0'+d:d;
+    let h=parseInt(times/60/60%24);
+    h=h<10?'0'+h:h;
+    let m=parseInt(times/60%60);
+    m=m<10?'0'+m:m;
+    let s=parseInt(times%60);
+    s=s<10?'0'+s:s;
+    return d+"天"+h+"时"+m+"分"+s+"秒";
+}
+document.getElementById('t').innerHTML=countDown('2021-10-10 0:40:47')},500)
+
+//Math内置对象
+Math.PI;//  3.141592653589793
+Math.pow(8, 2);     //  64   Math.pow(x, y) 的返回值是 x 的 y 次幂：
+Math.round(6.8);    //  7
+Math.round(2.3);    //  2    Math.round(x) 的返回值是 x 四舍五入为最接近的整数
+Math.sqrt(64);      //  8    Math.sqrt(x) 返回 x 的平方根：
+Math.abs(-4.7);     //  4.7  Math.abs(x) 返回 x 的绝对（正）值
+Math.ceil(6.4);     //  7    Math.ceil(x) 的返回值是 x 上舍入最接近的整数
+Math.floor(2.7);    //  2    Math.floor(x) 的返回值是 x 下舍入最接近的整数
+
+
+Math.min(0, 450, 35, 10, -8, -300, -78);  // -300     Math.min()可用于查找参数列表中的最低值
+Math.max(0, 450, 35, 10, -8, -300, -78);  // 450      Math.max()查找参数列表中的 最高值：
+
+Math.random(); //返回x 介于 0<=x<1 之间的随机数
+Math.floor(Math.random() * 10);		// 返回 0 至 9 之间的数
+Math.floor(Math.random() * 11);		// 返回 0 至 10 之间的数
+Math.floor(Math.random() * 100);	// 返回 0 至 99 之间的数
+</script>
+</html>

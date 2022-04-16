@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环</title>
+</head>
+
+<body>
+</body>
+<script>
+    {
+        var str = '';
+        for (var i = 0; i < 5; i++) {
+            str += '☆';
+        }
+        console.log(str);
+      
+    } {
+        var str = '';
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+                str +='☆';
+            }
+            str+='\n';
+        }
+        console.log(str);
+
+    }
+    {
+        var str='';
+        for(var i=1;i<=5;i++){
+            for(var j=1;j<=i;j++){
+                if(i%2==0){
+                    continue;//continue判定后会直接跳过当前循环进入下一循环，break则会在判定成功后跳出整个循环
+                }
+                str+='☆';
+            }
+            str+='\n';
+        }
+        console.log(str);
+   
+    }
+    {
+        var str='';
+        for(var i=0;i<5;i++){
+            for(var j=i;j<5;j++){
+                str+='☆';
+            }
+            str+='\n';
+        }
+        console.log(str);
+
+    }{
+        document.write("九九乘法表</br>");
+        var str='';
+        for(var i=1;i<=9;i++){
+            for(var j=1;j<=i;j++){
+                str+=j+'x'+i+'='+i*j+' ';
+                document.write( j+'x'+i+'='+i*j+' ');
+            }
+            document.write("</br>");
+        }
+        console.log(str);
+       
+    }{
+        document.write("0-100整数的和</br>");
+        var num=0;
+        var j=0;
+        while(j<=100){
+            num+=j;
+            j++;
+        }
+        console.log(num);
+        document.write(num);
+        document.write("</br>");
+    }{
+        var num=0;
+        var a=0;
+        do{
+            num+=a;
+            a++
+        }while(a<=100);//do_while会先执行一次循环体再去判断循环条件
+        console.log(num);
+        document.write(num);
+    }
+    {
+        var money = 0;
+do {
+    var op = Number(prompt('请输入您要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出'));
+    switch (op) {
+        case 1:
+            var save = Number(prompt('请您输入存的钱数:'));
+            money += save;
+            alert('您现在的钱数是:' + money);
+            break;
+        case 2:
+            var take = Number(prompt('请您输入取的钱数:'));
+            if (money < take){
+                alert('您的余额不足！！！');
+                break;
+            };
+            money -= take;
+            alert('您现在的钱数是:' + money);
+            break;
+        case 3:
+            alert('您现在的钱数是'+money);
+            break;
+        case 4:
+            alert('您正在退出！');
+            break;
+        default:
+            alert('输入错误，请重新输入！');
+            break;
+    };
+} while (op != 4);
+    }
+</script>
+
+</html>
