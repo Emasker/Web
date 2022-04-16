@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器</title>
+    <script src="../UI/jquery/jquery-3.3.1.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">div.nav</div>
+    <div>2</div>
+    <div>3</div>
+    <ul>
+        <li>ul.li1</li>
+        <li>ul.li2</li>
+        <li>ul.li3</li>
+    </ul>
+    <ol>
+        <li>ol.li1</li>
+        <li>ol.li2</li>
+        <li>ol.li3</li>
+        <li>ol.li4</li>
+        <li>ol.li5</li>
+    </ol>
+    <div class="grandpa">grandpa 
+        <div class="uncle">uncle</div>
+        <div class="father">father
+            <div class="son">son</div>
+            <div class="bro">bro</div>
+            <div class="sis">sis</div>
+        </div>
+       <div class="aunt">aunt</div>
+    </div>
+    <script>
+        $(function(){
+            console.log($('.nav'));
+            console.log($('ul li'));
+            // jquery对象不能使用style
+            $('div').css('background','aqua');
+            //隐式迭代就是把匹配的所有元素内部进行遍历循环，给每一个元素添加css这个方法
+            $("ul li").css("color", "red");
+
+            $("ul li:first").css('color','aqua ');//获取第一个元素
+            $('ul li:last').css('color','aquamarine');//获取最后一个元素
+            $('ul li:eq(1)').css('color','lightskyblue');
+            $('ul li').eq(1).css('color','lightskyblue');// eq（index）获取index的元素，从0开始
+            $('ol li:odd').css('color','aqua');//获取奇数索引的元素
+            $('ol li:even').css('color','lightskyblue');//获取偶数索引的元素
+
+            // 1. 父  parent()  返回的是 最近一级的父级元素
+            console.log($(".son").parent());
+            // 2. 子
+            // (1) 亲儿子 children()  类似子代选择器  ul>li
+         $(".grandpa").children("div").css("color", "red");
+            // (2) 可以选里面所有的孩子 包括儿子和孙子  find() 类似于后代选择器
+            $(".grandpa").find("div").css("color", "red");
+            // 3. 兄
+            $(".son").siblings('div').css("color", "lightgreen");//同级的其他元素，不包括自己
+            $('.bro').nextAll('div').css("color",'lightskyblue');//该元素后的所有同级元素
+            $('.bro').prevAll('div').css('color','lightblue');//该元素前的所有同级元素
+
+           //判断是否含有某个类名
+            console.log( $(".father").children('div').hasClass('son'));
+            console.log( $(".father").children('div').hasClass('dau'));
+        })
+    </script>
+</body>
+</html>

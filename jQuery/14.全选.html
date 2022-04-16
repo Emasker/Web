@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全选</title>
+    <script src="../UI/jquery/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" class="checkAll">全选
+                </th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td><input type="checkbox" class="j-checkbox">1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="j-checkbox">2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="j-checkbox">3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="j-checkbox">4</td>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox" class="checkAll">全选
+                </th>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(function () {
+            $(".checkAll").change(function () {
+                $(".j-checkbox, .checkAll").prop("checked", $(this).prop("checked"));
+            })
+            $("input").change(function () {
+                if ($(".j-checkbox:checked").length === $(".j-checkbox").length) {
+                    $(".checkAll").prop("checked", true);
+                } else {
+                    $(".checkAll").prop("checked", false);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

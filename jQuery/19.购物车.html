@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <script src="../UI/jquery/jquery-3.3.1.min.js"></script>
+    <style>
+        img {
+            border: 0;
+            /*ie6*/
+            vertical-align: middle;
+        }
+
+        /*让button 按钮 变成小手*/
+        button {
+            cursor: pointer;
+        }
+
+        /*取消链接的下划线*/
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #e33333;
+        }
+
+        body {
+            background-color: #fff;
+            font: 12px/1.5 'Microsoft YaHei', 'Heiti SC', tahoma, arial, 'Hiragino Sans GB', \\5B8B\4F53, sans-serif;
+            color: #666
+        }
+
+        .car-header {
+            padding: 20px 0;
+        }
+
+        .car-logo img {
+            vertical-align: middle;
+        }
+
+        .car-logo b {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        .cart-filter-bar {
+            font-size: 16px;
+            color: #E2231A;
+            font-weight: 700;
+        }
+
+        .cart-filter-bar em {
+            padding: 5px;
+            border-bottom: 1px solid #E2231A;
+        }
+
+        .cart-thead {
+            height: 32px;
+            line-height: 32px;
+            margin: 5px 0 10px;
+            padding: 5px 0;
+            background: #f3f3f3;
+            border: 1px solid #e9e9e9;
+            border-top: 0;
+            position: relative;
+        }
+
+        .cart-thead>div,
+        .cart-item>div {
+            float: left;
+        }
+
+        .t-checkbox,
+        .p-checkbox {
+            height: 18px;
+            line-height: 18px;
+            padding-top: 7px;
+            width: 122px;
+            padding-left: 11px;
+        }
+
+        .t-goods {
+            width: 400px;
+        }
+
+        .t-price {
+            width: 120px;
+            padding-right: 40px;
+            text-align: right;
+        }
+
+        .t-num {
+            width: 150px;
+            text-align: center;
+        }
+
+        .t-sum {
+            width: 100px;
+            text-align: right;
+        }
+
+        .t-action {
+            width: 130px;
+            text-align: right;
+        }
+
+        .cart-item {
+            height: 160px;
+            border-style: solid;
+            border-width: 2px 1px 1px;
+            border-color: #aaa #f1f1f1 #f1f1f1;
+            background: #fff;
+            padding-top: 14px;
+            margin: 15px 0;
+        }
+
+        .check-cart-item {
+            background: #fff4e8;
+        }
+
+        .p-checkbox {
+            width: 50px;
+        }
+
+        .p-goods {
+            margin-top: 8px;
+            width: 565px;
+        }
+
+        .p-img {
+            float: left;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .p-msg {
+            float: left;
+            width: 210px;
+            margin: 0 10px;
+        }
+
+        .p-price {
+            width: 110px;
+        }
+
+        .quantity-form {
+            width: 80px;
+            height: 22px;
+        }
+
+        .p-num {
+            width: 170px;
+        }
+
+        .decrement,
+        .increment,
+        .amount {
+            text-decoration: none;
+            float: left;
+            border: 1px solid #cacbcb;
+            height: 18px;
+            line-height: 18px;
+            padding: 1px 0;
+            width: 16px;
+            text-align: center;
+            color: #666;
+            margin: 0;
+            background: #fff;
+            margin-left: -1px;
+        }
+
+        .amount {
+            width: 42px;
+            padding: 1px;
+            margin-left: -1px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .p-sum {
+            font-weight: 700;
+            width: 145px;
+        }
+
+        /* 结算模块 */
+
+        .cart-floatbar {
+            height: 50px;
+            border: 1px solid #f0f0f0;
+            background: #fff;
+            position: relative;
+            margin-bottom: 50px;
+            line-height: 50px;
+        }
+
+        .select-all {
+            float: left;
+            height: 18px;
+            line-height: 18px;
+            padding: 16px 0 16px 9px;
+            white-space: nowrap;
+        }
+
+        .select-all input {
+            vertical-align: middle;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .operation {
+            float: left;
+            width: 200px;
+            margin-left: 40px;
+        }
+
+        .clear-all {
+            font-weight: 700;
+            margin: 0 20px;
+        }
+
+        .toolbar-right {
+            float: right;
+        }
+
+        .amount-sum {
+            float: left;
+        }
+
+        .amount-sum em {
+            font-weight: 700;
+            color: #E2231A;
+            padding: 0 3px;
+        }
+
+        .price-sum {
+            float: left;
+            margin: 0 15px;
+        }
+
+        .price-sum em {
+            font-size: 16px;
+            color: #E2231A;
+            font-weight: 700;
+        }
+
+        .btn-area {
+            font-weight: 700;
+            width: 94px;
+            height: 52px;
+            line-height: 52px;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            font-family: "Microsoft YaHei";
+            background: #e54346;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c-container">
+        <div class="w">
+            <div class="cart-filter-bar">
+                <em>全部商品</em>
+            </div>
+            <!-- 购物车主要核心区域 -->
+            <div class="cart-warp">
+                <!-- 头部全选模块 -->
+                <div class="cart-thead">
+                    <div class="t-checkbox">
+                        <input type="checkbox" name="" id="" class="checkAll"> 全选
+                    </div>
+                    <div class="t-goods">商品</div>
+                    <div class="t-price">单价</div>
+                    <div class="t-num">数量</div>
+                    <div class="t-sum">小计</div>
+                    <div class="t-action">操作</div>
+                </div>
+                <!-- 商品详细模块 -->
+                <div class="cart-item-list">
+                    <div class="cart-item">
+                        <div class="p-checkbox">
+                            <input type="checkbox" name="" id="" class="j-checkbox">
+                        </div>
+                        <div class="p-goods">
+                            <div class="p-img">
+                                <img src="images/p1.jpg" alt="">
+                            </div>
+                            <div class="p-msg">【5本26.8元】经典儿童文学彩图青少版八十天环游地球中学生语文教学大纲</div>
+                        </div>
+                        <div class="p-price">￥12.60</div>
+                        <div class="p-num">
+                            <div class="quantity-form">
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" class="amount" value="1">
+                                <a href="javascript:;" class="increment">+</a>
+                            </div>
+                        </div>
+                        <div class="p-sum">￥12.60</div>
+                        <div class="p-action"><a href="javascript:;">删除</a></div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="p-checkbox">
+                            <input type="checkbox" name="" id="" class="j-checkbox">
+                        </div>
+                        <div class="p-goods">
+                            <div class="p-img">
+                                <img src="images/p2.jpg" alt="">
+                            </div>
+                            <div class="p-msg">【2000张贴纸】贴纸书 3-6岁 贴画儿童 贴画书全套12册 贴画 贴纸儿童 汽</div>
+                        </div>
+                        <div class="p-price">￥24.80</div>
+                        <div class="p-num">
+                            <div class="quantity-form">
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" class="amount" value="1">
+                                <a href="javascript:;" class="increment">+</a>
+                            </div>
+                        </div>
+                        <div class="p-sum">￥24.80</div>
+                        <div class="p-action"><a href="javascript:;">删除</a></div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="p-checkbox">
+                            <input type="checkbox" name="" id="" class="j-checkbox">
+                        </div>
+                        <div class="p-goods">
+                            <div class="p-img">
+                                <img src="images/p3.jpg" alt="">
+                            </div>
+                            <div class="p-msg">唐诗三百首+成语故事全2册 一年级课外书 精装注音儿童版 小学生二三年级课外阅读书籍</div>
+                        </div>
+                        <div class="p-price">￥29.80</div>
+                        <div class="p-num">
+                            <div class="quantity-form">
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" class="amount" value="1">
+                                <a href="javascript:;" class="increment">+</a>
+                            </div>
+                        </div>
+                        <div class="p-sum">￥29.80</div>
+                        <div class="p-action"><a href="javascript:;">删除</a></div>
+                    </div>
+                </div>
+
+                <!-- 结算模块 -->
+                <div class="cart-floatbar">
+                    <div class="select-all">
+                        <input type="checkbox" name="" id="" class="checkAll">全选
+                    </div>
+                    <div class="operation">
+                        <a href="javascript:;" class="remove-batch"> 删除选中的商品</a>
+                        <a href="javascript:;" class="clear-all">清理购物车</a>
+                    </div>
+                    <div class="toolbar-right">
+                        <div class="amount-sum">已经选<em>0</em>件商品</div>
+                        <div class="price-sum">总价： <em>￥0</em></div>
+                        <div class="btn-area">去结算</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    $(function () {
+        //1.全选组件
+        $(".checkAll").change(function () {
+            $(".j-checkbox, .checkAll").prop("checked", $(this).prop("checked"));
+            if ($(this).prop("checked"))
+            {
+                $(".cart-item").addClass("check-cart-item");
+            }else{
+                $(".cart-item").removeClass("check-cart-item");
+            }
+        })
+        //2.分选组件
+        $(".j-checkbox").change(function () {
+            if ($(".j-checkbox:checked").length === $(".j-checkbox").length) {
+                $(".checkAll").prop("checked", true);
+            } else {
+                $(".checkAll").prop("checked", false);
+            }
+            if ($(this).prop("checked"))
+            {
+                $(this).parents(".cart-item").addClass("check-cart-item");
+            }else{
+                $(this).parents(".cart-item").removeClass("check-cart-item");
+            }
+        })
+        //3.商品数量
+        $(".increment").click(function () {
+            var n = $(this).siblings(".amount").val();
+            n++;
+            $(this).siblings(".amount").val(n);
+            const p = $(this).parents(".p-num").siblings(".p-price").html().substr(1);
+            const price = (p * n).toFixed(2);
+            $(this).parents(".p-num").siblings(".p-sum").html("￥" + price);
+            getSum();
+        })
+        $(".decrement").click(function () {
+            var n = $(this).siblings(".amount").val();
+            if (n > 0) {
+                n--;
+            }
+            $(this).siblings(".amount").val(n);
+            const p = $(this).parents(".p-num").siblings(".p-price").html().substr(1);
+            const price = (p * n).toFixed(2);
+            $(this).parents(".p-num").siblings(".p-sum").html("￥" + price);
+            getSum();
+        })
+        //4.商品小计
+        $(".amount").change(function () {
+            var n = $(this).val();
+            const p = $(this).parents(".p-num").siblings(".p-price").html().substr(1);
+            const price = (p * n).toFixed(2);
+            $(this).parents(".p-num").siblings(".p-sum").html("￥" + price);
+            var n = $(this).val();
+            getSum();
+        })
+        //5.计算数量及总价
+        function getSum() {
+            var count = 0; // 计算总件数 
+            var money = 0; // 计算总价钱
+            $(".amount").each(function (i, ele) {
+                count += parseInt($(ele).val());
+            });
+            $(".amount-sum em").text(count);
+            $(".p-sum").each(function (i, ele) {
+                money += parseFloat($(ele).text().substr(1));
+            });
+            $(".price-sum em").text("￥" + money.toFixed(2));
+        }
+        //6. 删除商品模块
+        // (1) 商品后面的删除按钮
+        $(".p-action a").click(function () {
+            // 删除的是当前的商品 
+            $(this).parents(".cart-item").remove();
+            getSum();
+        });
+        // (2) 删除选中的商品
+        $(".remove-batch").click(function () {
+            // 删除的是小的复选框选中的商品
+            $(".j-checkbox:checked").parents(".cart-item").remove();
+            getSum();
+        });
+        // (3) 清空购物车 删除全部商品
+        $(".clear-all").click(function () {
+            $(".cart-item").remove();
+            getSum();
+        })
+    })
+</script>
+
+</html>
