@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+
+<body>
+    <button>AJAX请求</button>
+    <script>
+        const btn = document.querySelector("button")
+        btn.onclick = function () {
+            fetch('http://www.liulongbin.top:3006/api/post', {
+                    method: "post",
+                    headers: {
+                        "Content-type": "application:/x-www-form-urlencoded:charset=UTF-8"
+                    },
+                    body: "name=lzc&age=20"
+                })
+                .then(status)
+                .then(function (data) {
+                    console.log("请求成功，JSON解析后的响应数据为:", data);
+                })
+                .catch(function (err) {
+                    console.log("Fetch错误:" + err);
+                });
+        }
+    </script>
+</body>
+
+</html>
