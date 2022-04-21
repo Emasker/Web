@@ -21,12 +21,12 @@
             console.log(this); //window
         }, 1000);
         //2.方法调用时谁调用this指向谁
-        var o = {
+        var fun = {
             sayHi: function () {
                 console.log(this); //this指向的是o
             }
         }
-        o.sayHi();//指向对象o
+        fun.sayHi();//指向对象o
 
         var btn = document.querySelector('button');
         btn.addEventListener('click', function () {
