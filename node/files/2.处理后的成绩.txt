@@ -1,0 +1,5 @@
+Math:99
+English:100
+Chinese:88
+History:70
+biology:66
