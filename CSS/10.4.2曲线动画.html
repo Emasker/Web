@@ -1,51 +1,60 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>曲线动画</title>
-<style>
-	div{
-		width: 200px;
-		background-color: #663399;
-		margin: 2em;
-		padding: 8em 2em .2em 2em;
-	}
-	.logo{
-		color: #fff;
-		font-family: Helvetica Neue, Arial, sans-serif;
-		font-size: 2em;
-	}
-	.box-outer{
-		display: inline-block;
-	}
-	.box-inner{
-		display: inline-block;
-		width: .74em;
-		height: .74em;
-		background-color: #fff;
-	}
-	@keyframes jump{
-		from{
-			transform: rotate(0) translateX(0) rotate(0) scale(1);
+	<meta charset="utf-8">
+	<title>曲线动画</title>
+	<style>
+		div {
+			width: 200px;
+			background-color: #663399;
+			margin: 2em;
+			padding: 8em 2em .2em 2em;
 		}
-		70%,100%{
-			transform: rotate(175deg) translateX(-170px) rotate(-175deg) scale(.5);
+
+		.logo {
+			color: #fff;
+			font-family: Helvetica Neue, Arial, sans-serif;
+			font-size: 2em;
 		}
-	}
-	.box-inner{
-		animation: jump 2s ease-in-out infinite;
-	}
+
+		.box-outer {
+			display: inline-block;
+		}
+
+		.box-inner {
+			display: inline-block;
+			width: .74em;
+			height: .74em;
+			background-color: #fff;
+		}
+
+		@keyframes jump {
+			from {
+				transform: rotate(0) translateX(0) rotate(0) scale(1);
+			}
+
+			70%,
+			100% {
+				transform: rotate(175deg) translateX(-170px) rotate(-175deg) scale(.5);
+			}
+		}
+
+		.box-inner {
+			animation: jump 2s ease-in-out infinite;
+		}
 	</style>
 </head>
 
 <body>
-<div>
-<h1 class="logo">
-	<span class="box-outer"><span class="box-inner"></span></span>
-	<span class="logo-box">Box</span>
-	<span class="logo-model">model</span>
-</h1>
-</div>
+	<div>
+		<h1 class="logo">
+			<span class="box-outer"><span class="box-inner"></span></span>
+			<span class="logo-box">Box</span>
+			<span class="logo-model">model</span>
+		</h1>
+	</div>
 </body>
 </body>
+
 </html>

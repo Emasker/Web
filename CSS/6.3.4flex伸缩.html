@@ -1,50 +1,62 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>flex伸缩</title>
-<style>
-	.nav ul{
-		
-		list-style: none;/*去除列表样式*/
-		background-color: #55C8F1;
-		padding: 0;
-		font-size: 0;
-		display: flex;/*默认为flex-direction：row；从左至右排序*/
-/*		flex-direction: row-reverse;从从右至左排序*/
 
-	}
-	.nav li{
-		text-transform: uppercase;/*大写*/
-		text-align: center;/*居中*/
-		box-sizing: border-box;/*盒模式*/
-		outline: 1px solid #fff;
-		background-color: #3848F5;
-		font-size: 16px;
-		font-size: 1rem;
-		flex: 1 0 0%;
-	}
-	.nav li a{
-		display: block;/*块级元素*/
-		text-decoration: none;/*去除下划线*/
-		line-height: 1.75em;
-		padding: 1em;
-		color:#fff;
-	}
-	.nav li:first-child{
-		flex-grow: 4;
-	}
+<head>
+	<meta charset="utf-8">
+	<title>flex伸缩</title>
+	<style>
+		.nav ul {
+
+			list-style: none;
+			/*去除列表样式*/
+			background-color: #55C8F1;
+			padding: 0;
+			font-size: 0;
+			display: flex;
+			/*默认为flex-direction：row；从左至右排序*/
+			/*		flex-direction: row-reverse;从从右至左排序*/
+
+		}
+
+		.nav li {
+			text-transform: uppercase;
+			/*大写*/
+			text-align: center;
+			/*居中*/
+			box-sizing: border-box;
+			/*盒模式*/
+			outline: 1px solid #fff;
+			background-color: #3848F5;
+			font-size: 16px;
+			font-size: 1rem;
+			flex: 1 0 0%;
+		}
+
+		.nav li a {
+			display: block;
+			/*块级元素*/
+			text-decoration: none;
+			/*去除下划线*/
+			line-height: 1.75em;
+			padding: 1em;
+			color: #fff;
+		}
+
+		.nav li:first-child {
+			flex-grow: 4;
+		}
 	</style>
 </head>
 
 <body>
-<div class="nav">
-	<ul>
-		<li><a href="">Home</a></li>
-		<li><a href="">Spaceships</a></li>
-		<li><a href="">Planets</a></li>
-		<li><a href="">Start</a></li>
-	</ul>
-</div>
+	<div class="nav">
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Spaceships</a></li>
+			<li><a href="">Planets</a></li>
+			<li><a href="">Start</a></li>
+		</ul>
+	</div>
 </body>
+
 </html>

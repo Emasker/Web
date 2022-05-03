@@ -1,39 +1,43 @@
 <!doctype html>
 <html lang="zh-CN">
+
 <head>
-<meta charset="UTF-8">
-<title>grid</title>
-<style>
-body{
-	display: grid;
-	grid-template-columns: 12% auto 400px 12%;
-	grid-template-rows: auto auto 800px auto ;
-	grid-template-areas: 
-	"header header header header header"
-	"sidebar content content content ."
-	"sidebar content content content ."
-	"footer footer footer footer footer";	
-}
+	<meta charset="UTF-8">
+	<title>grid</title>
+	<style>
+		body {
+			display: grid;
+			grid-template-columns: 12% auto 400px 12%;
+			grid-template-rows: auto auto 800px auto;
+			grid-template-areas:
+				"header header header header header"
+				"sidebar content content content ."
+				"sidebar content content content ."
+				"footer footer footer footer footer";
+		}
 
-.header {
-	grid-area: header;
-	background-color: #faa;
-}
-.sidebar {
-	grid-area: sidebar;
-	background-color: #ffa;
-}
-.content {
-	grid-area: content;
-	background-color: #afa;
-}
-.footer {
-	grid-area: footer;
-	background-color: #aaf;
-}
+		.header {
+			grid-area: header;
+			background-color: #faa;
+		}
 
-</style>
+		.sidebar {
+			grid-area: sidebar;
+			background-color: #ffa;
+		}
+
+		.content {
+			grid-area: content;
+			background-color: #afa;
+		}
+
+		.footer {
+			grid-area: footer;
+			background-color: #aaf;
+		}
+	</style>
 </head>
+
 <body>
 
 
@@ -44,4 +48,5 @@ body{
 
 
 </body>
+
 </html>

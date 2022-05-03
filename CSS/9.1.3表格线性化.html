@@ -1,98 +1,110 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>表格线性化</title>
-<style>
-	.cars{
-		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-		width: 100%;
-		border-collapse: collapse;
-	}
-	.cars caption{
-		text-align: left;
-		font-style: italic;
-		border-bottom: 1px solid #ccc;
-	}
-	.cars tr:nth-child(even){
-		background-color: #eee;
-	}
-	.cars caption,
-	.cars th,
-	.cars td{
-		text-align: left;
-		padding: 0 .5em;
-		line-height: 2;
-	}
-	.cars thead{
-		border-bottom: 2px solid;
-	}
-	@media only screen and (max-width:760px){
-		.cars{
-			display: block;
-		}
-		.cars thead{
-			display: none;
-		}
-		.cars tr{
-			border-bottom: 1px solid;
-		}
-		.cars td,th
-		{
-			display: block;
-			float: left;
+	<meta charset="utf-8">
+	<title>表格线性化</title>
+	<style>
+		.cars {
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 			width: 100%;
-			box-sizing: border-box;
+			border-collapse: collapse;
 		}
-		.cars th{
-			font-weight: 600;
-			border-bottom: 2px solid;
-			padding-top: 10px;
-		}
-		.cars td:before{
-			width: 40%;
-			display: inline-block;
+
+		.cars caption {
+			text-align: left;
 			font-style: italic;
-			content:attr(data-label);
+			border-bottom: 1px solid #ccc;
 		}
-	}
+
+		.cars tr:nth-child(even) {
+			background-color: #eee;
+		}
+
+		.cars caption,
+		.cars th,
+		.cars td {
+			text-align: left;
+			padding: 0 .5em;
+			line-height: 2;
+		}
+
+		.cars thead {
+			border-bottom: 2px solid;
+		}
+
+		@media only screen and (max-width:760px) {
+			.cars {
+				display: block;
+			}
+
+			.cars thead {
+				display: none;
+			}
+
+			.cars tr {
+				border-bottom: 1px solid;
+			}
+
+			.cars td,
+			th {
+				display: block;
+				float: left;
+				width: 100%;
+				box-sizing: border-box;
+			}
+
+			.cars th {
+				font-weight: 600;
+				border-bottom: 2px solid;
+				padding-top: 10px;
+			}
+
+			.cars td:before {
+				width: 40%;
+				display: inline-block;
+				font-style: italic;
+				content: attr(data-label);
+			}
+		}
 	</style>
 </head>
 
 <body>
-<table class="cars">
-	<caption>tesla car models</caption>
-	<thead>
-		<tr>
-			<th class="col">Model</th>
-			<th class="col">Top speed</th>
-			<th class="col">Range</th>
-			<th class="col">Length</th>
-			<th class="col">Width</th>
-			<th class="col">Weight</th>
-			<th class="col">Starting price</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td data-label="Model">Model S</td>
-			<td data-label="Top speed">201 km/h</td>
-			<td data-label="Range">426 km</td>
-			<td data-label="Length">4,976 mm</td>
-			<td data-label="Width">1,963 mm</td>
-			<td data-label="Weight">2,108 kg</td>
-			<td data-label="Starting price">$69,900</td>
-		</tr>
-		<tr>
-			<td data-label="Model">Roadster</td>
-			<td data-label="Top speed">201 km/h</td>
-			<td data-label="Range">393 km</td>
-			<td data-label="Length">3,946 mm</td>
-			<td data-label="Width">1,873 mm</td>
-			<td data-label="Weight">1,235kg</td>
-			<td data-label="Starting price">$109000</td>
-		</tr>
-	</tbody>
-</table>
+	<table class="cars">
+		<caption>tesla car models</caption>
+		<thead>
+			<tr>
+				<th class="col">Model</th>
+				<th class="col">Top speed</th>
+				<th class="col">Range</th>
+				<th class="col">Length</th>
+				<th class="col">Width</th>
+				<th class="col">Weight</th>
+				<th class="col">Starting price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td data-label="Model">Model S</td>
+				<td data-label="Top speed">201 km/h</td>
+				<td data-label="Range">426 km</td>
+				<td data-label="Length">4,976 mm</td>
+				<td data-label="Width">1,963 mm</td>
+				<td data-label="Weight">2,108 kg</td>
+				<td data-label="Starting price">$69,900</td>
+			</tr>
+			<tr>
+				<td data-label="Model">Roadster</td>
+				<td data-label="Top speed">201 km/h</td>
+				<td data-label="Range">393 km</td>
+				<td data-label="Length">3,946 mm</td>
+				<td data-label="Width">1,873 mm</td>
+				<td data-label="Weight">1,235kg</td>
+				<td data-label="Starting price">$109000</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
+
 </html>

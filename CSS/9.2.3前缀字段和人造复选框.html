@@ -1,122 +1,136 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>前缀字段和人造复选框</title>
-<style>
-	fieldset{
-		width: 50%;
-	}
-	.flexbox .field-text{
-		display: flex;
-		max-width:28em;
-	}
-	.flexbox .field-text label{
-		display: flex;
-		flex:0 0 8em;
-		align-items: center;
-	}
-	.field-prefix{
-		display: inline-block;
-		border:1px solid #676666;
-		background-color: #B4B4B4;
-		border-radius: .25em;
-	}
-	.field-prefixed input{
-		min-width: 12em;
-	}
 
-	.flexbox .field-prefixed{
-		display: flex;
-	}
-	.flexbox .field-prefix{
-		border-right: 0;
-		border-radius: .25em 0 0 .25em;
-		display: flex;
-		align-items: center;
-	}
-	.flexbox .field-prefixed input{
-		max-width: 100%;
-		border-radius: 0 .25em .25em 0;
-	}
-	.checkboxes{
-		list-style: none;
-		padding: 0;
-		column-width: 10em;
-	}
-	.checkboxes li{
-		margin-bottom: .5em;
-	}
-	.checkboxes li label{
-		position: absolute;
-	}
-	.checkboxes li input{
-		width: 16px;
-	    height: 16px;
-	}
-	input[type="checkbox"]{
-		appearance:none;
-		border: 1px solid #00AFF0;
-    	border-radius: 2px;
-	}
- 	input[type="checkbox"]:checked{
-   		background: url("../images/check.jpg")no-repeat center;
-	}
-	
+<head>
+	<meta charset="utf-8">
+	<title>前缀字段和人造复选框</title>
+	<style>
+		fieldset {
+			width: 50%;
+		}
+
+		.flexbox .field-text {
+			display: flex;
+			max-width: 28em;
+		}
+
+		.flexbox .field-text label {
+			display: flex;
+			flex: 0 0 8em;
+			align-items: center;
+		}
+
+		.field-prefix {
+			display: inline-block;
+			border: 1px solid #676666;
+			background-color: #B4B4B4;
+			border-radius: .25em;
+		}
+
+		.field-prefixed input {
+			min-width: 12em;
+		}
+
+		.flexbox .field-prefixed {
+			display: flex;
+		}
+
+		.flexbox .field-prefix {
+			border-right: 0;
+			border-radius: .25em 0 0 .25em;
+			display: flex;
+			align-items: center;
+		}
+
+		.flexbox .field-prefixed input {
+			max-width: 100%;
+			border-radius: 0 .25em .25em 0;
+		}
+
+		.checkboxes {
+			list-style: none;
+			padding: 0;
+			column-width: 10em;
+		}
+
+		.checkboxes li {
+			margin-bottom: .5em;
+		}
+
+		.checkboxes li label {
+			position: absolute;
+		}
+
+		.checkboxes li input {
+			width: 16px;
+			height: 16px;
+		}
+
+		input[type="checkbox"] {
+			appearance: none;
+			border: 1px solid #00AFF0;
+			border-radius: 2px;
+		}
+
+		input[type="checkbox"]:checked {
+			background: url("../images/check.jpg")no-repeat center;
+		}
 	</style>
 </head>
 
 <body>
-<form class="flexbox">
-<fieldset>
-	<p class="field field-text">
-		<label for="name">Name:</label>
-		<input type="text" name="name" id="name"/>
-	</p>
-	<p class="filed field-text">
-	<label for="applicant-twitter">Twitter handle:</label>
-	<span class="field-prefixed">
-		<span class="field-prefix" id="applicant-twitter-prefix" aria-label="You can omit the @">@</span>
-		<input type="text" aria-describedby="applicant-twitter-prefix" name="applicant-twitter" id="applicant-twitter"/>
-	</span>
-	</p>
-	<p>Major:
-		<ul class="checkboxes">
-			<li>
-			<input type="checkbox" name="C" id="C">
-			<label for="C">C</label>
-			</li>
-			<li>
-			<input type="checkbox" name="C++" id="C++">
-			<label for="C++">C++</label>
-			</li>			
-			<li>
-			<input type="checkbox" name="Java" id="Java">
-			<label for="Java">Java</label>
-			</li>
-			<li>
-			<input type="checkbox" name="HTML5" id="HTML5">
-			<label for="HTML5">HTML5</label>
-			</li>
-			<li>
-			<input type="checkbox" name="CSS3" id="CSS3">
-			<label for="CSS3">CSS3</label>
-			</li>
-			<li>
-			<input type="checkbox" name="JavaScript" id="JavaScript">
-			<label for="JavaScript">JavaScript</label>
-			</li>
-			<li>
-			<input type="checkbox" name="Python" id="Python">
-			<label for="Python">Python</label>
-			</li>
-			<li>
-			<input type="checkbox" name="Node" id="Node">
-			<label for="Node">Node</label>
-			</li>
-		</ul>
-	</p>
-</fieldset>
-</form>
+	<form class="flexbox">
+		<fieldset>
+			<p class="field field-text">
+				<label for="name">Name:</label>
+				<input type="text" name="name" id="name" />
+			</p>
+			<p class="filed field-text">
+				<label for="applicant-twitter">Twitter handle:</label>
+				<span class="field-prefixed">
+					<span class="field-prefix" id="applicant-twitter-prefix" aria-label="You can omit the @">@</span>
+					<input type="text" aria-describedby="applicant-twitter-prefix" name="applicant-twitter"
+						id="applicant-twitter" />
+				</span>
+			</p>
+			<p>Major:
+				<ul class="checkboxes">
+					<li>
+						<input type="checkbox" name="C" id="C">
+						<label for="C">C</label>
+					</li>
+					<li>
+						<input type="checkbox" name="C++" id="C++">
+						<label for="C++">C++</label>
+					</li>
+					<li>
+						<input type="checkbox" name="Java" id="Java">
+						<label for="Java">Java</label>
+					</li>
+					<li>
+						<input type="checkbox" name="HTML5" id="HTML5">
+						<label for="HTML5">HTML5</label>
+					</li>
+					<li>
+						<input type="checkbox" name="CSS3" id="CSS3">
+						<label for="CSS3">CSS3</label>
+					</li>
+					<li>
+						<input type="checkbox" name="JavaScript" id="JavaScript">
+						<label for="JavaScript">JavaScript</label>
+					</li>
+					<li>
+						<input type="checkbox" name="Python" id="Python">
+						<label for="Python">Python</label>
+					</li>
+					<li>
+						<input type="checkbox" name="Node" id="Node">
+						<label for="Node">Node</label>
+					</li>
+				</ul>
+			</p>
+		</fieldset>
+	</form>
 </body>
+
 </html>

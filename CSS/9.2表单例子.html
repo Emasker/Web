@@ -1,76 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>表单</title>
     <style>
-		label{
-			cursor: pointer;
-			display: block;
-		}
-		rexarea{
-			height: 10em;
-			resize: vertical;
-		}
-	</style>
+        label {
+            cursor: pointer;
+            display: block;
+        }
+
+        rexarea {
+            height: 10em;
+            resize: vertical;
+        }
+    </style>
 </head>
+
 <body>
-<form action="" method="post">
-    <fieldset>
-      <legend>表单名</legend>
-        <p class="text">
-            <label for="username">姓名：</label>
-            <input type="text" name="username" id="username" placeholder="姓名" required="required" />
-        </p>
-        <p class="text">
-             <label for="pwd">密码：</label><input type="password" name="pwd" id="pwd" placeholder="密码" />
-        </p>
-        <p>
-           <label> 性别：</label>
-            <input type="radio" name="sex" value="1" checked="checked"/>男
-            <input type="radio" name="sex" value="0" />女
-        </p>
-        <p>
-            <label>爱好：</label>
-            <input type="checkbox" name="basketball" value="basketball" />篮球
-            <input type="checkbox" name="football" value="football" />足球
-        </p>
-        <p>
-            <label for="bloodtype">血型：</label>
-            <select name="bloodtype" id="bloodtype">
-                <option value="A">A型</option>
-                <option value="B">B型</option>
-                <option value="AB">AB型</option>
-                <option value="O">O型</option>
-            </select>
-        </p>
-        <p>
-            <label>颜色(多选)</label>
-               <input type="checkbox" name="color" id="red"> 红色
-               <input type="checkbox" name="color" id="blue"> 蓝色
-               <input type="checkbox" name="color" id="green"> 绿色 
-            <label for="intro">介绍</label>
-            <textarea name="intro" cols="30" rows="3" id="intro"></textarea>
-        </p>
-        <p>
-            <label>数量 ( 1 到 5 之间 ): </label>
-            <input type="number" name="quantity" min="1" max="5">
-            <input type="submit" >
-        </p>
-        <p>
-            <label>生日:</label> 
-            <input type="date" name="bday">
-            <input type="submit" >
-        </p>
-        <p>
-            <label>选择时间: </label> 
-            <input type="time" name="usr_time">
-  			<input type="submit">
-        </p>
-        <input type="submit" value="提交按钮" />
-        <input type="reset" value="重置按钮" />
-        <input type="button" value="自定义按钮" />
-       </fieldset>
-	</form>
+    <form action="" method="post">
+        <fieldset>
+            <legend>表单名</legend>
+            <p class="text">
+                <label for="username">姓名：</label>
+                <input type="text" name="username" id="username" placeholder="姓名" required="required" />
+            </p>
+            <p class="text">
+                <label for="pwd">密码：</label><input type="password" name="pwd" id="pwd" placeholder="密码" />
+            </p>
+            <p>
+                <label> 性别：</label>
+                <input type="radio" name="sex" value="1" checked="checked" />男
+                <input type="radio" name="sex" value="0" />女
+            </p>
+            <p>
+                <label>爱好：</label>
+                <input type="checkbox" name="basketball" value="basketball" />篮球
+                <input type="checkbox" name="football" value="football" />足球
+            </p>
+            <p>
+                <label for="bloodtype">血型：</label>
+                <select name="bloodtype" id="bloodtype">
+                    <option value="A">A型</option>
+                    <option value="B">B型</option>
+                    <option value="AB">AB型</option>
+                    <option value="O">O型</option>
+                </select>
+            </p>
+            <p>
+                <label>颜色(多选)</label>
+                <input type="checkbox" name="color" id="red"> 红色
+                <input type="checkbox" name="color" id="blue"> 蓝色
+                <input type="checkbox" name="color" id="green"> 绿色
+                <label for="intro">介绍</label>
+                <textarea name="intro" cols="30" rows="3" id="intro"></textarea>
+            </p>
+            <p>
+                <label>数量 ( 1 到 5 之间 ): </label>
+                <input type="number" name="quantity" min="1" max="5">
+                <input type="submit">
+            </p>
+            <p>
+                <label>生日:</label>
+                <input type="date" name="bday">
+                <input type="submit">
+            </p>
+            <p>
+                <label>选择时间: </label>
+                <input type="time" name="usr_time">
+                <input type="submit">
+            </p>
+            <input type="submit" value="提交按钮" />
+            <input type="reset" value="重置按钮" />
+            <input type="button" value="自定义按钮" />
+        </fieldset>
+    </form>
 </body>
+
 </html>

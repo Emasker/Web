@@ -1,92 +1,112 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>flexbox</title>
-<style>
-	.nav ul{
-		border: 2px solid #fff;
-		list-style: none;/*去除列表样式*/
-		background-color: #55C8F1;
-		padding: 0;
-		font-size: 0;
-		display: flex;/*默认为flex-direction：row；从左至右排序*/
-		min-height:100px;
-		align-items: center;
-	}
-	.nav ul:nth-child(2){
-		flex-direction: row-reverse;/*从从右至左排序*/
-	}
-	.nav ul:nth-child(3){
-		justify-content: center;/*居中排序，flex-start从头拍，end从尾部拍*/
-	}
-	.nav ul:nth-child(4){
-		justify-content: flex-end;
-	}
-	.nav ul:nth-child(5){
-		justify-content: space-around;/*多余项放到每一项两侧*/
-	}
-	.nav ul:nth-child(6){
-		justify-content: space-between;/*多余项放到每两项中间*/	
-	}
-	.nav li{
-		text-transform: uppercase;/*大写*/
-		text-align: center;/*居中*/
-		box-sizing: border-box;/*盒模式*/
-		outline: 1px solid #fff;
-		background-color: #3848F5;
-		font-size: 16px;
-		font-size: 1rem;
-	
-	}
-	.nav li a{
-		display: block;/*块级元素*/
-		text-decoration: none;/*去除下划线*/
-		line-height: 1.75em;
-		padding: 1em;
-		color:#fff;
-	}
+	<meta charset="utf-8">
+	<title>flexbox</title>
+	<style>
+		.nav ul {
+			border: 2px solid #fff;
+			list-style: none;
+			/*去除列表样式*/
+			background-color: #55C8F1;
+			padding: 0;
+			font-size: 0;
+			display: flex;
+			/*默认为flex-direction：row；从左至右排序*/
+			min-height: 100px;
+			align-items: center;
+		}
+
+		.nav ul:nth-child(2) {
+			flex-direction: row-reverse;
+			/*从从右至左排序*/
+		}
+
+		.nav ul:nth-child(3) {
+			justify-content: center;
+			/*居中排序，flex-start从头拍，end从尾部拍*/
+		}
+
+		.nav ul:nth-child(4) {
+			justify-content: flex-end;
+		}
+
+		.nav ul:nth-child(5) {
+			justify-content: space-around;
+			/*多余项放到每一项两侧*/
+		}
+
+		.nav ul:nth-child(6) {
+			justify-content: space-between;
+			/*多余项放到每两项中间*/
+		}
+
+		.nav li {
+			text-transform: uppercase;
+			/*大写*/
+			text-align: center;
+			/*居中*/
+			box-sizing: border-box;
+			/*盒模式*/
+			outline: 1px solid #fff;
+			background-color: #3848F5;
+			font-size: 16px;
+			font-size: 1rem;
+
+		}
+
+		.nav li a {
+			display: block;
+			/*块级元素*/
+			text-decoration: none;
+			/*去除下划线*/
+			line-height: 1.75em;
+			padding: 1em;
+			color: #fff;
+		}
 	</style>
 </head>
 
 <body>
-<div class="nav">
-	<ul>
-		<li><a href="">Home</a></li>
-		<li><a href="">Spaceships</a></li>
-		<li><a href="">Planets</a></li>
-		<li><a href="">Start</a></li>
-	</ul>
-	<ul>
-		<li><a href="">Home</a></li>
-		<li><a href="">Spaceships</a></li>
-		<li><a href="">Planets</a></li>
-		<li><a href="">Start</a></li>
-	</ul>
-	<ul>
-		<li><a href="">Home</a></li>
-		<li><a href="">Spaceships</a></li>
-		<li><a href="">Planets</a></li>
-		<li><a href="">Start</a></li>
-	</ul>
-	<ul>
-		<li><a href="">Home</a></li>
-		<li><a href="">Spaceships</a></li>
-		<li><a href="">Planets</a></li>
-		<li><a href="">Start</a></li>
-	</ul>
-	<ul>
-		<li><a href="">Home</a></li>
-		<li><a href="">Spaceships</a></li>
-		<li><a href="">Planets</a></li>
-		<li><a href="">Start</a></li>
-	</ul>
-	<ul>
-		<li><a href="">Home</a></li>
-		<li><a href="">Spaceships</a></li>
-		<li><a href="">Planets</a></li>
-		<li><a href="">Start</a></li>
-	</ul>
-</div>
+	<div class="nav">
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Spaceships</a></li>
+			<li><a href="">Planets</a></li>
+			<li><a href="">Start</a></li>
+		</ul>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Spaceships</a></li>
+			<li><a href="">Planets</a></li>
+			<li><a href="">Start</a></li>
+		</ul>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Spaceships</a></li>
+			<li><a href="">Planets</a></li>
+			<li><a href="">Start</a></li>
+		</ul>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Spaceships</a></li>
+			<li><a href="">Planets</a></li>
+			<li><a href="">Start</a></li>
+		</ul>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Spaceships</a></li>
+			<li><a href="">Planets</a></li>
+			<li><a href="">Start</a></li>
+		</ul>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Spaceships</a></li>
+			<li><a href="">Planets</a></li>
+			<li><a href="">Start</a></li>
+		</ul>
+	</div>
 </body>
+
 </html>

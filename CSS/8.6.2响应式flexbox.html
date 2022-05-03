@@ -1,87 +1,95 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>购买界面</title>
-<style>
-	.order{
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-	}
-	.item{
-		color: #fff;
-		background-color: #129490;
-		display: flex;
-		flex-wrap: wrap;
-		font-size: 1.5em;
-		padding: 0;
-		margin-bottom: .25em;
-	}
-	.name{
-		padding: .25em;
-		flex:1 0 13em;
-	}
-	.controls{
-		flex:1 0 4em;
-		display: flex;
-	}
-	.control{
-		flex: 1;
-		text-align: center;
-		padding: .25em;
-		cursor: pointer;/*设定网页浏览时用户鼠标指针的样式*/
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		color: #fff;
-		font-size:inherit;
-	}
-	.increase{
-		background-color: #1e6f6d;
-	}
-	.decrease{
-		background-color: #1c5453;
-	}
 
+<head>
+	<meta charset="utf-8">
+	<title>购买界面</title>
+	<style>
+		.order {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+
+		.item {
+			color: #fff;
+			background-color: #129490;
+			display: flex;
+			flex-wrap: wrap;
+			font-size: 1.5em;
+			padding: 0;
+			margin-bottom: .25em;
+		}
+
+		.name {
+			padding: .25em;
+			flex: 1 0 13em;
+		}
+
+		.controls {
+			flex: 1 0 4em;
+			display: flex;
+		}
+
+		.control {
+			flex: 1;
+			text-align: center;
+			padding: .25em;
+			cursor: pointer;
+			/*设定网页浏览时用户鼠标指针的样式*/
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			color: #fff;
+			font-size: inherit;
+		}
+
+		.increase {
+			background-color: #1e6f6d;
+		}
+
+		.decrease {
+			background-color: #1c5453;
+		}
 	</style>
 </head>
 
 <body>
-<!--div>ul.order>(li.item>(span.name{物品$}+span.controls>(button.control.increase{+}+button.control.decrease{-})))*4-->
-<div>
-	<ul class="order">
-		<li class="item">
-		<span class="name">物品1</span>
-		<span class="controls">
-		<button class="control increase">+</button>
-		<button class="control decrease">-</button>
-		</span>
-		</li>
-		<li class="item">
-		<span class="name">物品2</span>
-		<span class="controls">
-		<button class="control increase">+</button>
-		<button class="control decrease">-</button>
-		</span>
-		</li>
-		<li class="item">
-		<span class="name">物品3</span>
-		<span class="controls">
-		<button class="control increase">+</button>
-		<button class="control decrease">-</button>
-		</span>
-		</li>
-		<li class="item">
-		<span class="name">物品4</span>
-		<span class="controls">
-		<button class="control increase">+</button>
-		<button class="control decrease">-</button>
-		</span>
-		</li>
-	</ul>
-</div>
+	<!--div>ul.order>(li.item>(span.name{物品$}+span.controls>(button.control.increase{+}+button.control.decrease{-})))*4-->
+	<div>
+		<ul class="order">
+			<li class="item">
+				<span class="name">物品1</span>
+				<span class="controls">
+					<button class="control increase">+</button>
+					<button class="control decrease">-</button>
+				</span>
+			</li>
+			<li class="item">
+				<span class="name">物品2</span>
+				<span class="controls">
+					<button class="control increase">+</button>
+					<button class="control decrease">-</button>
+				</span>
+			</li>
+			<li class="item">
+				<span class="name">物品3</span>
+				<span class="controls">
+					<button class="control increase">+</button>
+					<button class="control decrease">-</button>
+				</span>
+			</li>
+			<li class="item">
+				<span class="name">物品4</span>
+				<span class="controls">
+					<button class="control increase">+</button>
+					<button class="control decrease">-</button>
+				</span>
+			</li>
+		</ul>
+	</div>
 
 </body>
+
 </html>

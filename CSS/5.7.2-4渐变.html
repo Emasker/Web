@@ -1,75 +1,86 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>渐变</title>
-<style>
-	body/*渐变图案*/	{
-	margin:0;
-		z-index: -1;
-	background-color:#fff;
-	background-image:linear-gradient(
-	transparent,
-	transparent 50%,
-	rgba(55,100,176,.3) 50%
-	),
-	linear-gradient(
-	to right,
-	transparent,
-	transparent 50%,
-	rgba(55,100,176,.3) 50%
-	);
-	background-size:40px 40px;
-	}
-	div{/*线性渐变*/
-		height:200px;
-		width:200px;
-		
-	}
-	.zero{
-		float:left;
-		background-image: linear-gradient(to bottom right,blue,cyan);
-	}
-	.one{
-		float:left;
-		background-image: linear-gradient(45deg,blue,cyan);
-	}
-	.two{
-		float:left;
-		background-image: linear-gradient(to bottom,blue,cyan);
-	}
-	.three{float:left;
-		background-image: radial-gradient(circle closest-corner at 20% 30%,blue,cyan);
-	}
-	.four{float:left;
-		background-image: repeating-linear-gradient(blue,cyan 20px);
-	}
-	.five{float:left;
-		background-image: repeating-radial-gradient(blue,cyan 20px);
-	}
 
-</style>
+<head>
+	<meta charset="utf-8">
+	<title>渐变</title>
+	<style>
+		body
+
+		/*渐变图案*/
+			{
+			margin: 0;
+			z-index: -1;
+			background-color: #fff;
+			background-image: linear-gradient(transparent,
+					transparent 50%,
+					rgba(55, 100, 176, .3) 50%),
+				linear-gradient(to right,
+					transparent,
+					transparent 50%,
+					rgba(55, 100, 176, .3) 50%);
+			background-size: 40px 40px;
+		}
+
+		div {
+			/*线性渐变*/
+			height: 200px;
+			width: 200px;
+
+		}
+
+		.zero {
+			float: left;
+			background-image: linear-gradient(to bottom right, blue, cyan);
+		}
+
+		.one {
+			float: left;
+			background-image: linear-gradient(45deg, blue, cyan);
+		}
+
+		.two {
+			float: left;
+			background-image: linear-gradient(to bottom, blue, cyan);
+		}
+
+		.three {
+			float: left;
+			background-image: radial-gradient(circle closest-corner at 20% 30%, blue, cyan);
+		}
+
+		.four {
+			float: left;
+			background-image: repeating-linear-gradient(blue, cyan 20px);
+		}
+
+		.five {
+			float: left;
+			background-image: repeating-radial-gradient(blue, cyan 20px);
+		}
+	</style>
 </head>
 
 <body>
-<div class="zero">
- 左上到右下
-</div>
-<div class="one">
-上右45度
-</div>
-<div class="two">
-上到下
-</div>
-<div class="three">
-放射渐变
-</div>
-<div class="four">
-线性重复渐变
-</div>
-<div class="five">
-放射重复渐变
-</div>
+	<div class="zero">
+		左上到右下
+	</div>
+	<div class="one">
+		上右45度
+	</div>
+	<div class="two">
+		上到下
+	</div>
+	<div class="three">
+		放射渐变
+	</div>
+	<div class="four">
+		线性重复渐变
+	</div>
+	<div class="five">
+		放射重复渐变
+	</div>
 
 </body>
+
 </html>
