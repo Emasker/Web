@@ -1,0 +1,41 @@
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      display: inline-block;
+    }
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+      &:hover{//直接伪类嵌套会导致父类和子类之间有空格
+          color: aqua;
+      }
+    }
+    & &-text{//&在作用域中可代表父类
+        font-size: 14px;
+    }
+
+    // font-family: Helvetica, sans-serif;
+    // font-size: 18px;
+    // font-weight: bold;
+    
+    // text-align: center;
+    // text-transform: lowercase;
+    // text-overflow: hidden;
+    //对于同名前缀属性可以使用嵌套属性来编写
+    font: {
+        family: Helvetica, sans-serif;
+        size: 18px;
+        weight: bold;
+      }
+      
+      text: {
+        align: center;
+        transform: lowercase;
+        overflow: hidden;
+      }
+  }

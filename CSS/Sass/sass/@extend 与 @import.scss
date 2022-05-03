@@ -1,0 +1,28 @@
+//如果一个样式与另外一个样式几乎相同，只有少量的区别，则使用 @extend 就显得很有用
+.button-basic  {
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    a{
+        text-decoration: none;
+    }
+  }
+  
+  .button-report  {
+    @extend .button-basic;//父类的子类也会全部继承到新类
+    background-color: red;
+  }
+  
+  .button-submit  {
+    @extend .button-basic;
+    background-color: green;
+    color: white;
+  }
+  @import './变量及作用域';//导入其他文件
+  @import "Partials";
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: $myBlue;
+}

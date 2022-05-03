@@ -1,0 +1,29 @@
+nav {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: lowercase;
+  text-overflow: hidden;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+nav a:hover {
+  color: aqua;
+}
+nav nav-text {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=%E5%B5%8C%E5%A5%97.css.map */

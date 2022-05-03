@@ -1,0 +1,61 @@
+@charset "UTF-8";
+.button-basic, .button-submit, .button-report {
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+.button-basic a, .button-submit a, .button-report a {
+  text-decoration: none;
+}
+
+.button-report {
+  background-color: red;
+}
+
+.button-submit {
+  background-color: green;
+  color: white;
+}
+
+/* Sass 变量可以存储以下信息：
+字符串
+数字
+颜色值
+布尔值
+列表
+null 值 */
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#container {
+  width: 680px;
+}
+
+h1 {
+  color: green;
+}
+
+p {
+  color: red;
+}
+
+h2 {
+  color: green;
+}
+
+span {
+  color: green;
+}
+
+/* 如果你不希望将一个 Sass 的代码文件编译到一个 CSS 文件，你可以在文件名的开头添加一个下划线。这将告诉 Sass 不要将其编译到 CSS 文件。
+但是，在导入语句中我们不需要添加下划线 */
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: #4169E1;
+}
+
+/*# sourceMappingURL=@extend%20%E4%B8%8E%20@import.css.map */
