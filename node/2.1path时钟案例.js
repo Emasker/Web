@@ -2,7 +2,6 @@
 const fs = require('fs')
 // 1.2 导入 path 模块
 const path = require('path')
-
 // 1.3 定义正则表达式，分别匹配 <style></style> 和 <script></script> 标签
 const regStyle = /<style>[\s\S]*<\/style>/
 const regScript = /<script>[\s\S]*<\/script>/
